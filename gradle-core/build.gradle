@@ -147,6 +147,8 @@ dependencies {
 //    testCompile libs.kotlin_gradle_plugin
     testCompile 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.72'
 //    testCompile testFixtures(project(":base:repository"))
+    testCompile group: 'com.google.jimfs', name: 'jimfs', version: '1.1'
+    compile group: 'org.bouncycastle', name: 'bcprov-jdk15on', version: '1.48'
 
     compile fileTree(dir: "../libs/test", include: "*.jar")
 
