@@ -1,21 +1,44 @@
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        google()
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath fileTree(dir: "buildSrc/libs", includes: ['*.jar'])
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.72"
+        classpath 'org.jetbrains.dokka:dokka-android-gradle-plugin:0.9.18'
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.13'
+    }
+}
+
 apply plugin: 'java-gradle-plugin'
 apply plugin: 'kotlin'
 apply plugin: 'jacoco-tools-base'
 apply plugin: 'clone-artifacts'
-apply plugin: 'license-report'
+//apply plugin: 'license-report'
 apply plugin: 'com.google.protobuf'
+
+repositories {
+    google()
+    mavenCentral()
+    jcenter()
+}
 
 configurations {
     provided
     includeInJar
 }
 
-licenseReport {
-    whiteList = ['org.jetbrains.trove4j:trove4j:20160824']
-}
+//licenseReport {
+//    whiteList = ['org.jetbrains.trove4j:trove4j:20160824']
+//}
 
 // Set the version of the plugin in the manifest. This is used by 3rd party plugin (like Kotlin)
 jar.manifest.attributes("Plugin-Version": version)
@@ -163,16 +186,16 @@ test {
 }
 
 javadoc {
-    exclude     "**/internal/**"
+    exclude "**/internal/**"
 
     options.docTitle "Gradle Plugin for Android"
     options.header ""
     options.footer "Copyright (C) 2012 The Android Open Source Project"
 }
 
-task javadocJar(type: Jar, dependsOn:javadoc) {
-    classifier  'javadoc'
-    from        javadoc.destinationDir
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier 'javadoc'
+    from javadoc.destinationDir
 
 }
 
