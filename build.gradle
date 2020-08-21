@@ -145,11 +145,14 @@ dependencies {
 
 }
 
-//protobuf {
-//    protoc {
-//        artifact = libs.proto_compiler
-//    }
-//}
+def libs = [:].withDefault { key -> throw new IllegalArgumentException('"' + key + '" not a valid dependency.') }
+libs['protobuf'] = 'com.google.protobuf:protobuf-java:3.10.0'
+libs['proto_compiler'] = libs['protobuf'].replace('protobuf-java', 'protoc')
+protobuf {
+    protoc {
+        artifact = libs.proto_compiler
+    }
+}
 
 compileKotlin {
     kotlinOptions {
