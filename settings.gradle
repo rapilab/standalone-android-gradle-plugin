@@ -1,0 +1,5 @@
+rootProject.name = "Standalone Android Gradle Plugin"
+
+include 'gradle-api'
+includeBuild 'gradle-core'
+
