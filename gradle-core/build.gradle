@@ -64,6 +64,8 @@ sourceSets {
 }
 
 dependencies {
+      compile project(':gradle-api')
+
 //    compile project(':base:builder')
 //    compile project(':base:build-system:aaptcompiler')
 //    compile project(':analytics-library:crash')

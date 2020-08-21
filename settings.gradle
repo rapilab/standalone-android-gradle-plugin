@@ -1,5 +1,13 @@
-rootProject.name = "Standalone Android Gradle Plugin"
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+        jcenter()
+    }
+}
 
-include 'gradle-api'
-includeBuild 'gradle-core'
+rootProject.name = ("Standalone Android Gradle Plugin")
+
+include(":gradle-api")
+include(":gradle-core")
 
