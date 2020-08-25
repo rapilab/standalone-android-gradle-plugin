@@ -51,15 +51,16 @@ private const val AAPT2_CONFIG_NAME = "_internal_aapt2_binary"
 
 private object Aapt2Version {
     val BUILD_NUMBER: String by lazy(LazyThreadSafetyMode.PUBLICATION) {
-        Aapt2Version::class.java
-            .getResourceAsStream("aapt2_version.properties")
-            .buffered()
-            .use { stream ->
-                Properties().let { properties ->
-                    properties.load(stream)
-                    properties.getProperty("aapt2Version")
-                }
-            }
+//        Aapt2Version::class.java
+//            .getResourceAsStream("aapt2_version.properties")
+//            .buffered()
+//            .use { stream ->
+//                Properties().let { properties ->
+//                    properties.load(stream)
+//                    properties.getProperty("aapt2Version")
+//                }
+//            }
+        return@lazy "6051327"
     }
 }
 
