@@ -8,6 +8,16 @@ apply plugin: 'clone-artifacts'
 //apply plugin: 'license-report'
 apply plugin: 'com.google.protobuf'
 
+gradlePlugin {
+    // Define the plugin
+    plugins {
+        create('com.android.application') {
+            id = 'com.android.application'
+            implementationClass = 'com.android.build.gradle.AppPlugin'
+        }
+    }
+}
+
 buildscript {
     repositories {
         maven {
