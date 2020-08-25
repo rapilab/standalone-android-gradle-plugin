@@ -236,12 +236,12 @@ if (project.hasProperty("release")) {
         archives javadocJar
     }
 }
-
-tasks.processResources {
-    from(rootProject.file("../prebuilts/tools/common/aapt/aapt2_version.properties")) {
-        into "com/android/build/gradle/internal/res/"
-    }
-}
+//
+//tasks.processResources {
+//    from(rootProject.file("../prebuilts/tools/common/aapt/aapt2_version.properties")) {
+//        into "com/android/build/gradle/internal/res/"
+//    }
+//}
 
 // End Package instant run instrumentation inside of gradle-core.
 
