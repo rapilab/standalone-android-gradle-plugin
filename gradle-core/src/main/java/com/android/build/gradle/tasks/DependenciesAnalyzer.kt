@@ -17,7 +17,7 @@
 package com.android.build.gradle.tasks
 
 import com.android.SdkConstants
-import jdk.internal.org.objectweb.asm.Opcodes.ACC_PRIVATE
+//import jdk.internal.org.objectweb.asm.Opcodes.ACC_PRIVATE
 import jdk.internal.org.objectweb.asm.Opcodes.ASM5
 import org.objectweb.asm.ClassReader
 import org.objectweb.asm.ClassVisitor
@@ -41,7 +41,9 @@ import java.lang.reflect.Modifier.isPublic
  */
 class DependenciesAnalyzer {
 
-    private val level = ASM5
+    private val ACC_PRIVATE: Int = 2
+    private val INLINE_ASM5 = 327680
+    private val level = INLINE_ASM5
 
     private val primitives = setOf(
         "void",
