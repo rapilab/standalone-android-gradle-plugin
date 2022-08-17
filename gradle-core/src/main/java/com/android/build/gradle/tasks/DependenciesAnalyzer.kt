@@ -18,7 +18,7 @@ package com.android.build.gradle.tasks
 
 import com.android.SdkConstants
 //import jdk.internal.org.objectweb.asm.Opcodes.ACC_PRIVATE
-import jdk.internal.org.objectweb.asm.Opcodes.ASM5
+//import jdk.internal.org.objectweb.asm.Opcodes.ASM5
 import org.objectweb.asm.ClassReader
 import org.objectweb.asm.ClassVisitor
 import org.objectweb.asm.Type
